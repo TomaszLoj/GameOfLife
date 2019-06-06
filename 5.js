@@ -26,4 +26,4 @@ let boardLogical = transform2dArray(board, e => !!e);
 setInterval(() => {
     boardLogical = transform2dArray(boardLogical, shouldLive);
     render(boardLogical)
-}, 500);
+}, 200);
