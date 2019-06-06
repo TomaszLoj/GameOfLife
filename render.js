@@ -11,7 +11,7 @@ const chalk = require("chalk");
             }else {
                 color = chalk.bgBlue;
             }
-            row += color("  ");
+            row += color("   ");
         }
         console.log(row);
     }

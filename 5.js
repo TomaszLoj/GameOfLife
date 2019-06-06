@@ -1,8 +1,6 @@
 const { board } = require("./ExamInput2");
 const render = require("./render")
 
-const getLogicalValue = e => !!e;
-
 const transform2dArray = (arr, func) => arr.map((e, y) => e.map((e, x) => func(e, y, x, arr)));
 
 const flat2dArray = arr => arr.reduce((prev, curr) => prev.concat(curr));
@@ -23,7 +21,7 @@ const shouldLive = (e, y, x, arr) => {
     return (e && (counter >= 2 && counter <=3) || (!e && counter === 3)) ? true : false ;
 };
 
-let boardLogical = transform2dArray(board, getLogicalValue);
+let boardLogical = transform2dArray(board, e => !!e);
 
 setInterval(() => {
     boardLogical = transform2dArray(boardLogical, shouldLive);
